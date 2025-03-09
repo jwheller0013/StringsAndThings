@@ -15,7 +15,35 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        String inputL = input.toLowerCase();
+        int counter = 0;
+
+        for(int i = 0; i < input.length(); ++i) {
+            char idx = inputL.charAt(i);
+            if (idx == ' ') {
+                int j = i - 1;
+                char idxminus = inputL.charAt(j);
+                if (idxminus == 'y') {
+                    ++counter;
+                }
+
+                if (idxminus == 'z') {
+                    ++counter;
+                }
+            }
+        }
+
+            int z = input.length() - 1;
+            char idxend = input.charAt(z);
+            if (idxend == 'y') {
+                ++counter;
+            }
+
+            if (idxend == 'z') {
+                ++counter;
+            }
+
+            return counter;
     }
 
     /**
@@ -28,7 +56,7 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        return base.replaceAll(remove, "");
     }
 
     /**
@@ -40,7 +68,17 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        int counter = 0;
+
+        int c = input.split("is").length -1;
+        int d = input.split("not").length -1;
+        //increase counter if string as instances of "is"
+        //decrease counter if string as instances of "not"
+        //end with counter == 0;
+
+        counter = c-d;
+
+        return counter == 0;
     }
 
     /**
