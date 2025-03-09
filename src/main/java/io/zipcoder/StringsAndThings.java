@@ -89,7 +89,23 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        String inputL = input.toLowerCase();
+        int counter = 0;
+
+        for(int i = 0; i < input.length() -1; i++) {
+            char idx = inputL.charAt(i);
+            int j = i+1;
+            char idxplus = inputL.charAt(j);
+            if (idx == 'g' && idxplus != 'g') {
+                    counter++;
+                }
+            //if this never runs counter==0 so true
+            //if it does run counter>0 so false
+        }
+
+        //issue with going out of range with idxplus
+
+        return counter == 0;
     }
 
 
@@ -101,6 +117,21 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
+//        String inputL = input.toLowerCase();
+//        int counter = 0;
+//
+//        for(int i = 0; i < input.length(); i++) {
+//            char idx = inputL.charAt(i);
+//            char idxplus = inputL.charAt(i+1);
+//            char idxdblplus = inputL.charAt(i+2);
+//            if (idx == idxplus) {
+//                if (idxplus == idxdblplus) {
+//                    counter++;
+//                }
+//                }
+//            }
+//        same issue as gIsHappy it goes out of bounds
+//        return counter;
         return null;
     }
 }
